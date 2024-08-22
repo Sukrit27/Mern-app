@@ -36,7 +36,7 @@ export const signup = async (req, res) => {
             await generateTokenandSetCookie(newUser._id, res);
             await newUser.save();
 
-            res.send(201).json({
+            res.status(201).json({
                 _id: newUser._id,
                 fullName: newUser.fullName,
                 username: newUser.username,
